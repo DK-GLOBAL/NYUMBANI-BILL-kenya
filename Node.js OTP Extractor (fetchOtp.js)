@@ -1,0 +1,95 @@
+require('dotenv').config();
+const { ImapFlow } = require('imapflow');
+const { simpleParser } = require('mailparser');
+
+async function getLatestGmailOtp({ subjectFilter = '', markAsRead = true } = {}) {
+  const client = new ImapFlow({
+    host: process.env.IMAP_HOST || 'imap.gmail.com',
+    port: Number(process.env.IMAP_PORT) || 993,
+    secure: process.env.IMAP_TLS !== 'false', // true for port 993
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+    logger: false, // Set to true if you want detailed IMAP debug logs
+  });
+
+  try {
+    await client.connect();
+
+    // Acquire a lock on the INBOX
+    const lock = await client.getMailboxLock('INBOX');
+
+    try {
+      // Build search criteria: look for unseen (unread) emails
+      const searchCriteria = { seen: false };
+      if (subjectFilter) {
+        searchCriteria.subject = subjectFilter;
+      }
+
+      // Search returns an array of message sequence numbers
+      const messageIds = await client.search(searchCriteria);
+
+      if (!messageIds || messageIds.length === 0) {
+        console.log('No unread matching emails found.');
+        return null;
+      }
+
+      // Grab the most recent email ID (the last item in the array)
+      const latestId = messageIds[messageIds.length - 1];
+
+      // Fetch the raw email source
+      const message = await client.fetchOne(latestId, { source: true });
+      const parsed = await simpleParser(message.source);
+
+      // Extract plain text (fallback to stripping HTML tags if text is empty)
+      const bodyText =
+        parsed.text || (parsed.html ? parsed.html.replace(/<[^>]*>?/gm, ' ') : '');
+
+      // Match a standalone 6-digit code
+      const otpMatch = bodyText.match(/\b\d{6}\b/);
+
+      if (otpMatch) {
+        if (markAsRead) {
+          await client.messageFlagsAdd(latestId, ['\\Seen']);
+        }
+        return {
+          otp: otpMatch[0],
+          subject: parsed.subject,
+          from: parsed.from?.text,
+          date: parsed.date,
+        };
+      }
+
+      console.log('Latest email did not contain a 6-digit code.');
+      return null;
+    } finally {
+      // Always release the mailbox lock
+      lock.release();
+    }
+  } catch (error) {
+    console.error('IMAP Error:', error.message);
+    throw error;
+  } finally {
+    await client.logout();
+  }
+}
+
+// ==========================================
+// Example Usage
+// ==========================================
+(async () => {
+  console.log('Checking Gmail for latest OTP...');
+  
+  // Optional: pass a subjectFilter like 'Verification' or 'OTP' to avoid matching random 6-digit numbers
+  const result = await getLatestGmailOtp({
+    subjectFilter: '', 
+    markAsRead: true,
+  });
+
+  if (result) {
+    console.log('✅ OTP Found:', result.otp);
+    console.log('From:', result.from);
+    console.log('Subject:', result.subject);
+  }
+})();
