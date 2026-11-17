@@ -1,0 +1,75 @@
+# ==========================================
+# 1. APP & SUPABASE (Nyumbani Bill)
+# ==========================================
+NEXT_PUBLIC_APP_NAME="Nyumbani Bill"
+NEXT_PUBLIC_APP_URL=https://nyumbani-bill.vercel.app
+
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+
+# ==========================================
+# 2. SMS & OTP GATEWAY (Africa's Talking / Twilio)
+# ==========================================
+SMS_PROVIDER=africastalking
+SMS_API_KEY=your_sms_api_key_here
+SMS_USERNAME=sandbox
+SMS_SENDER_ID=NYUMBANIBILL
+OTP_EXPIRY_SECONDS=300
+OTP_LENGTH=6
+
+# ==========================================
+# 3. GMAIL (Custom SMTP & IMAP OTP Reader)
+# ==========================================
+GMAIL_USER=your_email@gmail.com
+GMAIL_APP_PASSWORD=your_16_char_google_app_password
+
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_SECURE=true
+
+IMAP_HOST=imap.gmail.com
+IMAP_PORT=993
+IMAP_TLS=true
+
+# ==========================================
+# 4. M-PESA (Safaricom Daraja API)
+# ==========================================
+MPESA_ENVIRONMENT=sandbox
+MPESA_CONSUMER_KEY=your_daraja_consumer_key_here
+MPESA_CONSUMER_SECRET=your_daraja_consumer_secret_here
+MPESA_PASSKEY=your_lipa_na_mpesa_online_passkey_here
+MPESA_SHORTCODE=174379
+MPESA_TILL_NUMBER=
+MPESA_CALLBACK_URL=https://nyumbani-bill.vercel.app/api/mpesa/callback
+MPESA_TIMEOUT_URL=https://nyumbani-bill.vercel.app/api/mpesa/timeout
+
+# ==========================================
+# 5. PESALINK (Bank Transfers)
+# ==========================================
+PESALINK_ENVIRONMENT=sandbox
+PESALINK_BASE_URL=https://sandbox.pesalink.co.ke/api/v1
+PESALINK_CLIENT_ID=your_pesalink_client_id_here
+PESALINK_CLIENT_SECRET=your_pesalink_client_secret_here
+PESALINK_API_KEY=your_pesalink_api_key_here
+PESALINK_SOURCE_ACCOUNT=your_settlement_account_number
+PESALINK_BANK_CODE=your_bank_code
+PESALINK_CALLBACK_URL=https://nyumbani-bill.vercel.app/api/pesalink/callback
+
+# ==========================================
+# 6. OTHER PAYMENT PLATFORMS (Aggregators & Cards)
+# ==========================================
+# Paystack
+PAYSTACK_PUBLIC_KEY=your_paystack_public_key_here
+PAYSTACK_SECRET_KEY=your_paystack_secret_key_here
+PAYSTACK_WEBHOOK_SECRET=your_paystack_webhook_secret_here
+
+# Flutterwave
+FLW_PUBLIC_KEY=your_flutterwave_public_key_here
+FLW_SECRET_KEY=your_flutterwave_secret_key_here
+FLW_ENCRYPTION_KEY=your_flutterwave_encryption_key_here
+
+# Stripe
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key_here
+STRIPE_SECRET_KEY=your_stripe_secret_key_here
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret_here
