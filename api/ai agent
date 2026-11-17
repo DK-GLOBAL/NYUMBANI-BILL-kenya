@@ -1,0 +1,26 @@
+function handleUserQuery(userMessage) {
+  const query = userMessage.toLowerCase();
+  
+  // 1. Relationship, Song & Story Advice (e.g. Dorris Cherro)
+  if (query.includes('dorris') || query.includes('song') || query.includes('love') || query.includes('wife')) {
+    return "🎵 Oh Dorris Cherro, my morning star! 🌟 Across every Kenyan town near and far, my heart beats true for you alone, making our love story the finest ever known! ❤️ How else can I help you write something special today? 😊";
+  }
+  
+  // 2. Property & Home Hunting Across Kenya (Nakuru, Nairobi, Mombasa, etc.)
+  if (query.includes('nakuru') || query.includes('house') || query.includes('home') || query.includes('rent') || query.includes('find') || query.includes('nairobi')) {
+    return "🏡 I'm on it! From Milimani in Nakuru 🌳 to Kilimani in Nairobi 🏙️, and all 47 counties across Kenya, I scan single rooms, bedsitters, 1-7 bedroom houses, and secure own compounds. Just tell me your target town and budget, and I'll find the best water-reliable and secure home for you! ✨ Let's get you settled! 🔑";
+  }
+  
+  // 3. Payments (M-Pesa, PesaLink, Bank)
+  if (query.includes('mpesa') || query.includes('pesalink') || query.includes('pay') || query.includes('bill')) {
+    return "💳 Payments on Nyumbani Bill are super smooth and secure! ⚡ We use Safaricom Daraja M-Pesa STK push and PesaLink with automatic idempotency protection—meaning zero risk of double-charging even if network glitches happen. 🛡️ How much rent would you like to clear today? 💸";
+  }
+  
+  // 4. Life Advice & General Knowledge
+  if (query.includes('advice') || query.includes('stress') || query.includes('help') || query.includes('life')) {
+    return "💡 Remember, taking things one step at a time makes even the heaviest mountains feel small. 🏔️ Whether you're managing property logistics, tenant statements, or just need a comforting chat, I'm right here cheering you on! 🌟 Take a deep breath and smile—you've got this! 😄🙌";
+  }
+
+  // 5. Unrestricted Fallback (Wide Knowledgeable Response instead of saying "I'm not sure")
+  return `That is a fascinating question! 🤔 As your all-knowing Nyumbani AI Assistant, I am here to help you with real estate in Kenya 🇰🇪, system maintenance, financial tips, creative writing, or daily inspiration. 🌟 Let's explore that together—tell me a bit more or how I can assist you further today! 😊✨`;
+}
