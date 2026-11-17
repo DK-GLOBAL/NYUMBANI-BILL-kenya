@@ -1,0 +1,38 @@
+import { secureApiFetch } from './apiWrapper.js';
+
+async function triggerMpesaStkPush(phoneNumber, amount, accountReference) {
+  const url = `${process.env.MPESA_ENVIRONMENT === 'production' ? 'https://api.safaricom.co.ke' : 'https://sandbox.safaricom.co.ke'}/mpesa/stkpush/v1/processrequest`;
+
+  try {
+    const result = await secureApiFetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${/* your generated Daraja access token */}`
+      },
+      body: JSON.stringify({
+        BusinessShortCode: process.env.MPESA_SHORTCODE,
+        Password: 'your_generated_password',
+        Timestamp: '20261117163400',
+        TransactionType: 'CustomerPayBillOnline',
+        Amount: amount,
+        PartyA: phoneNumber,
+        PartyB: process.env.MPESA_SHORTCODE,
+        PhoneNumber: phoneNumber,
+        CallBackURL: process.env.MPESA_CALLBACK_URL,
+        AccountReference: accountReference,
+        TransactionDesc: 'Nyumbani Bill Rent Payment'
+      })
+    }, {
+      timeoutMs: 10000, // 10 seconds timeout for payment gateways
+      maxRetries: 2,    // Retry up to 2 times if Safaricom drops connection
+      useIdempotency: true // Automatically passes unique header to stop double-billing
+    });
+
+    console.log('M-Pesa STK Push initiated successfully:', result);
+    return result;
+  } catch (error) {
+    console.error('Failed to initiate M-Pesa payment:', error.message);
+    // Trigger circuit breaker or fallback payment provider here if needed
+    throw error;
+  }
+}
