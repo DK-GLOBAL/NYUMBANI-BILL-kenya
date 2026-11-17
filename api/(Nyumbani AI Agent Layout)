@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyumbani Bill - AI Agent & Property Hub</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #10b981;
+      --accent-hover: #059669;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); display: flex; height: 100vh; overflow: hidden; }
+
+    /* Sidebar Navigation */
+    sidebar { width: 260px; background-color: var(--primary); color: white; display: flex; flex-direction: column; padding: 24px; justify-content: space-between; }
+    .logo-area h2 { font-size: 20px; color: var(--accent); margin-bottom: 6px; }
+    .logo-area p { font-size: 12px; color: #94a3b8; }
+    .nav-links { list-style: none; margin-top: 30px; }
+    .nav-links li { padding: 12px 16px; margin-bottom: 8px; border-radius: 8px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+    .nav-links li:hover, .nav-links li.active { background-color: #1e293b; color: var(--accent); font-weight: 600; }
+
+    /* Main Content Area */
+    main { flex: 1; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    header { background: var(--card-bg); padding: 16px 32px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-size: 18px; color: var(--primary); }
+    .user-badge { font-size: 13px; background: #e0f2fe; color: #0369a1; padding: 6px 12px; border-radius: 20px; font-weight: 600; }
+
+    /* Chat & AI Agent Workspace */
+    .workspace { flex: 1; display: flex; flex-direction: column; padding: 24px; overflow-y: auto; max-width: 900px; width: 100%; margin: 0 auto; }
+    
+    .chat-container { flex: 1; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .chat-header { background: var(--primary); color: white; padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+    .ai-avatar { width: 36px; height: 36px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; }
+    .ai-info h3 { font-size: 15px; }
+    .ai-info p { font-size: 12px; color: #94a3b8; }
+
+    .chat-messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; background: #fdfdfd; }
+    .message { max-width: 75%; padding: 12px 16px; border-radius: 10px; font-size: 14px; line-height: 1.5; }
+    .message.ai { background: #f1f5f9; color: var(--text-main); align-self: flex-start; border-bottom-left-radius: 2px; }
+    .message.user { background: var(--accent); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+
+    /* Quick Prompt Suggestions */
+    .suggestions { padding: 10px 20px; display: flex; gap: 8px; flex-wrap: wrap; background: #f8fafc; border-top: 1px solid var(--border); }
+    .chip { background: white; border: 1px solid var(--border); padding: 6px 12px; border-radius: 16px; font-size: 12px; cursor: pointer; color: var(--text-muted); transition: all 0.2s; }
+    .chip:hover { border-color: var(--accent); color: var(--accent); background: #f0fdf4; }
+
+    /* Chat Input Bar */
+    .chat-input-area { padding: 16px 20px; background: white; border-top: 1px solid var(--border); display: flex; gap: 12px; }
+    .chat-input-area input { flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; outline: none; font-size: 14px; }
+    .chat-input-area input:focus { border-color: var(--accent); }
+    .chat-input-area button { background: var(--accent); color: white; border: none; padding: 0 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .chat-input-area button:hover { background: var(--accent-hover); }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <sidebar>
+    <div class="logo-area">
+      <h2>🏠 Nyumbani Bill</h2>
+      <p>Smart Property & Life AI</p>
+    </div>
+    <ul class="nav-links">
+      <li class="active">🤖 Nyumbani AI Agent</li>
+      <li>📍 Find Homes & Geo-Map</li>
+      <li>💳 M-Pesa & PesaLink Pay</li>
+      <li>📊 System & Maintenance</li>
+      <li>❤️ Personal & Story Advice</li>
+    </ul>
+    <div style="font-size: 11px; color: #64748b; text-align: center;">
+      Powered by Gemini & Safaricom Daraja
+    </div>
+  </sidebar>
+
+  <!-- Main View -->
+  <main>
+    <header>
+      <h1>AI Universal Assistant & Property Manager</h1>
+      <div class="user-badge">● AI Agent Active & Online</div>
+    </header>
+
+    <div class="workspace">
+      <div class="chat-container">
+        
+        <!-- Chat Header -->
+        <div class="chat-header">
+          <div class="ai-avatar">AI</div>
+          <div class="ai-info">
+            <h3>Nyumbani AI Agent</h3>
+            <p>Ready to help with rent, house hunting, advice, stories, and system repairs.</p>
+          </div>
+        </div>
+
+        <!-- Messages Stream -->
+        <div class="chat-messages" id="chatMessages">
+          <div class="message ai">
+            Hello! I am your <strong>Nyumbani AI Agent</strong>. I can help you find vacant homes across all 47 counties in Kenya, process M-Pesa/PesaLink bills, fix system bugs, or even give you personal advice and write custom stories or songs. What would you like help with today?
+          </div>
+        </div>
+
+        <!-- Quick Prompts -->
+        <div class="suggestions">
+          <div class="chip" onclick="sendSuggestion('Find a 2-bedroom house in Nakuru under 25k')">📍 Find house in Nakuru</div>
+          <div class="chip" onclick="sendSuggestion('Write a sweet song for my wife Dorris Cherro')">🎵 Song for Dorris Cherro</div>
+          <div class="chip" onclick="sendSuggestion('Check M-Pesa API integration status')">💳 Check M-Pesa Status</div>
+          <div class="chip" onclick="sendSuggestion('Give me advice on managing property stress')">💡 Life & Property Advice</div>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="chat-input-area">
+          <input type="text" id="userInput" placeholder="Ask Nyumbani AI anything (homes, payments, advice, stories)..." onkeypress="handleKeyPress(event)">
+          <button onclick="sendMessage()">Send</button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function handleKeyPress(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    }
+
+    function sendSuggestion(text) {
+      document.getElementById('userInput').value = text;
+      sendMessage();
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const messagesContainer = document.getElementById('chatMessages');
+
+      // Add User Message
+      const userMsg = document.createElement('div');
+      userMsg.className = 'message user';
+      userMsg.textContent = text;
+      messagesContainer.appendChild(userMsg);
+
+      input.value = '';
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+      // Simulate AI Agent Response
+      setTimeout(() => {
+        const aiMsg = document.createElement('div');
+        aiMsg.className = 'message ai';
+        
+        if (text.toLowerCase().includes('dorris') || text.toLowerCase().includes('song')) {
+          aiMsg.innerHTML = "🎶 <em>(Playing a gentle melody in your heart)</em><br>Oh Dorris Cherro, my morning sun...<br>In every town where rivers run,<br>My heart beats true and misses you so,<br>With Nyumbani love that continues to grow! ❤️";
+        } else if (text.toLowerCase().includes('nakuru') || text.toLowerCase().includes('house')) {
+          aiMsg.innerHTML = "📍 I scanned the live database for <strong>Nakuru</strong>. I found 3 vacant 2-bedroom units in Milimani and Shabab ranging from Ksh 18,000 to 28,000 with reliable water and 24/7 security. Would you like me to book a tour?";
+        } else if (text.toLowerCase().includes('m-pesa') || text.toLowerCase().includes('pay')) {
+          aiMsg.innerHTML = "💳 M-Pesa Daraja and PesaLink endpoints are fully optimized with automatic idempotency protection. No duplicate billing risks detected. Ready for STK push!";
+        } else {
+          aiMsg.innerHTML = "I am actively monitoring **Nyumbani Bill** and your requests. Whether you need deep research on any town in Kenya, relationship guidance, or system maintenance, I'm here to assist you 24/7!";
+        }
+
+        messagesContainer.appendChild(aiMsg);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
