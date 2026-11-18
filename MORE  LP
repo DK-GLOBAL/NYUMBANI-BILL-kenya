@@ -1,0 +1,48 @@
+<!-- LANDLORD & TENANT POWER SECTIONS -->
+<div style="max-width: 1100px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; padding: 0 20px;">
+
+  <!-- FOR LANDLORDS: Property & Financial Control -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 28px; color: #ffffff;">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+      <div style="background: #059669; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🏢</div>
+      <div>
+        <h3 style="font-size: 18px; margin: 0; color: #38bdf8;">For Landlords & Managing Agents</h3>
+        <p style="font-size: 12px; color: #94a3b8; margin: 2px 0 0 0;">Automate collections & vacant unit listings</p>
+      </div>
+    </div>
+    
+    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; display: flex; flexDirection: column; gap: 12px; font-size: 14px; color: #cbd5e1;">
+      <li>✅ <strong>Automated M-Pesa STK Push:</strong> Tenants pay rent directly; funds reflect instantly with auto-reconciliation.</li>
+      <li>📊 <strong>Live Occupancy & Vacancy Tracker:</strong> Instantly publish vacant single rooms, bedsitters, or apartments across Kenyan counties.</li>
+      <li>⚖️ <strong>KRA eTIMS Compliance:</strong> Generate official tax-compliant rental invoices with a single click.</li>
+      <li>🔔 <strong>WhatsApp & SMS Reminders:</strong> Automated reminder alerts sent to tenants 3 days before rent due dates.</li>
+    </ul>
+
+    <button style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer;">
+      Register as Landlord 🚀
+    </button>
+  </div>
+
+  <!-- FOR TENANTS: Smart Home Finding & Utility Hub -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 28px; color: #ffffff;">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+      <div style="background: #2563eb; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🔑</div>
+      <div>
+        <h3 style="font-size: 18px; margin: 0; color: #38bdf8;">For Tenants & House Seekers</h3>
+        <p style="font-size: 12px; color: #94a3b8; margin: 2px 0 0 0;">Find secure homes with reliable water & electricity</p>
+      </div>
+    </div>
+    
+    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; display: flex; flexDirection: column; gap: 12px; font-size: 14px; color: #cbd5e1;">
+      <li>📍 <strong>County & Ward Filtering:</strong> Search exact areas (e.g., Milimani Nakuru, Kilimani Nairobi) instantly.</li>
+      <li>💧 <strong>Water & Security Ratings:</strong> View verified ratings on water consistency and gated compound security before booking.</li>
+      <li>🤖 <strong>Nyumbani AI Matchmaker:</strong> Tell our AI your budget and location; it analyzes listings and finds your ideal home.</li>
+      <li>📄 <strong>Digital Lease & Receipts:</strong> Track all your rent payment history and digital receipts on your mobile phone.</li>
+    </ul>
+
+    <button style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer;">
+      Find a Home Now 🏡
+    </button>
+  </div>
+
+</div>
