@@ -1,0 +1,58 @@
+<!-- Works with the tools Kenya runs on -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding: 20px;">
+
+  <!-- M-Pesa -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 12px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/M-PESA_LOGO-01.svg" alt="M-Pesa" style="width: 32px; height: 32px; object-fit: contain;">
+    <div>
+      <h4 style="color: #fff; font-size: 14px; margin: 0;">M-Pesa</h4>
+      <p style="color: #94a3b8; font-size: 11px; margin: 2px 0 0 0;">Safaricom Payments</p>
+    </div>
+  </div>
+
+  <!-- WhatsApp -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 12px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 32px; height: 32px; object-fit: contain;">
+    <div>
+      <h4 style="color: #fff; font-size: 14px; margin: 0;">WhatsApp</h4>
+      <p style="color: #94a3b8; font-size: 11px; margin: 2px 0 0 0;">Rent reminders</p>
+    </div>
+  </div>
+
+  <!-- Airtel Money -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 12px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Airtel_logo_2010.svg" alt="Airtel Money" style="width: 32px; height: 32px; object-fit: contain;">
+    <div>
+      <h4 style="color: #fff; font-size: 14px; margin: 0;">Airtel Money</h4>
+      <p style="color: #94a3b8; font-size: 11px; margin: 2px 0 0 0;">Mobile money</p>
+    </div>
+  </div>
+
+  <!-- PesaLink -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 12px;">
+    <div style="width: 32px; height: 32px; background: #0ea5e9; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">PL</div>
+    <div>
+      <h4 style="color: #fff; font-size: 14px; margin: 0;">PesaLink</h4>
+      <p style="color: #94a3b8; font-size: 11px; margin: 2px 0 0 0;">Bank transfers</p>
+    </div>
+  </div>
+
+  <!-- SMS Gateway -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 12px;">
+    <div style="width: 32px; height: 32px; background: #10b981; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">💬</div>
+    <div>
+      <h4 style="color: #fff; font-size: 14px; margin: 0;">SMS Gateway</h4>
+      <p style="color: #94a3b8; font-size: 11px; margin: 2px 0 0 0;">Custom sender ID</p>
+    </div>
+  </div>
+
+  <!-- Data Protection Act -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 12px;">
+    <div style="width: 32px; height: 32px; background: #6366f1; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">🔒</div>
+    <div>
+      <h4 style="color: #fff; font-size: 14px; margin: 0;">Data Protection</h4>
+      <p style="color: #94a3b8; font-size: 11px; margin: 2px 0 0 0;">Privacy compliance</p>
+    </div>
+  </div>
+
+</div>
