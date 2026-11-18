@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nyumbani Bill - Property Management & Billing System Kenya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --navy-dark: #132333;
+      --navy-card: #1b2e42;
+      --gold-accent: #f59e0b;
+      --gold-hover: #d97706;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #1f2937;
+    }
+    .bg-navy { background-color: var(--navy-dark); }
+    .bg-navy-card { background-color: var(--navy-card); }
+    .text-gold { color: var(--gold-accent); }
+    .bg-gold { background-color: var(--gold-accent); }
+    .bg-gold:hover { background-color: var(--gold-hover); }
+  </style>
+</head>
+<body class="bg-gray-50 antialiased">
+
+  <!-- Top Contact Bar -->
+  <div class="bg-navy text-gray-300 text-xs py-2 px-4 border-b border-gray-700">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span><i class="fas fa-phone-alt text-gold mr-1"></i> +254 718 500 100</span>
+        <span><i class="fas fa-envelope text-gold mr-1"></i> admin@nyumbani.ke</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#features" class="hover:text-gold transition">Key Features</a>
+        <a href="#reports" class="hover:text-gold transition">Sample Reports</a>
+        <a href="#security" class="hover:text-gold transition">Data Protection</a>
+        <a href="#media" class="hover:text-gold transition">Media</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center border-2 border-amber-500">
+          <i class="fas fa-home text-amber-400 text-lg"></i>
+        </div>
+        <div>
+          <span class="font-extrabold text-xl tracking-tight text-slate-900 block leading-none">NYUMBANI</span>
+          <span class="text-[10px] font-semibold uppercase tracking-widest text-amber-600">Property & Billing</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex space-x-7 text-sm font-semibold text-gray-700">
+        <a href="#home" class="hover:text-amber-600 transition">Home</a>
+        <a href="#solutions" class="hover:text-amber-600 transition">Who We Serve</a>
+        <a href="#features" class="hover:text-amber-600 transition">Key Features</a>
+        <a href="#diaspora" class="hover:text-amber-600 transition">Diaspora</a>
+        <a href="#security" class="hover:text-amber-600 transition">Data Protection</a>
+        <a href="#media" class="hover:text-amber-600 transition">Media</a>
+      </nav>
+
+      <!-- CTA / Login Button -->
+      <div class="flex items-center space-x-3">
+        <button onclick="toggleLoginModal()" class="bg-gold text-white font-bold text-sm px-5 py-2.5 rounded shadow hover:shadow-md transition flex items-center gap-2">
+          <i class="fas fa-lock text-xs"></i> Login
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-navy text-white py-16 lg:py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+          #1 Prop-Tech Solution in Kenya
+        </span>
+        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+          The Premium Property Management & <span class="text-gold">Automated Billing</span> System
+        </h1>
+        <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+          Streamline rent collection via M-Pesa & PesaLink, automate water & utility invoicing, track arrears in real-time, and manage properties across all 47 Kenyan counties effortlessly.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="toggleLoginModal()" class="bg-gold text-slate-950 font-bold px-7 py-3.5 rounded shadow-lg transition">
+            Get Started Now
+          </button>
+          <a href="#contact" class="border border-gray-500 hover:border-amber-400 text-white font-semibold px-7 py-3.5 rounded transition">
+            Request A Demo
+          </a>
+        </div>
+        <div class="mt-8 flex items-center gap-6 text-sm text-gray-400">
+          <div><strong class="text-white text-lg">60,000+</strong> Happy Users</div>
+          <div class="h-4 w-px bg-gray-700"></div>
+          <div><strong class="text-amber-400 text-lg">★★★★★</strong> 4.9/5 Client Rating</div>
+        </div>
+      </div>
+
+      <!-- Dashboard Preview Mockup -->
+      <div class="bg-navy-card p-5 rounded-xl border border-gray-700 shadow-2xl">
+        <div class="flex items-center justify-between border-b border-gray-700 pb-3 mb-4">
+          <div class="flex space-x-2">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">app.nyumbani.ke/dashboard</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
+          <div class="bg-emerald-600/90 p-4 rounded-lg">
+            <p class="text-xs uppercase opacity-80">Collected (M-Pesa)</p>
+            <p class="text-xl font-extrabold mt-1">KES 4,850,000</p>
+          </div>
+          <div class="bg-amber-600/90 p-4 rounded-lg">
+            <p class="text-xs uppercase opacity-80">Pending Invoices</p>
+            <p class="text-xl font-extrabold mt-1">KES 320,500</p>
+          </div>
+          <div class="bg-sky-600/90 p-4 rounded-lg col-span-2 sm:col-span-1">
+            <p class="text-xs uppercase opacity-80">Occupancy Rate</p>
+            <p class="text-xl font-extrabold mt-1">96.4%</p>
+          </div>
+        </div>
+        <div class="mt-4 bg-slate-900/70 p-4 rounded-lg border border-gray-700/70 text-xs space-y-2.5">
+          <div class="flex justify-between items-center text-gray-300">
+            <span><i class="fas fa-check-circle text-emerald-400 mr-2"></i>Unit B4 - Kilimani Heights (M-Pesa Paybill)</span>
+            <span class="font-bold text-emerald-400">+ KES 45,000</span>
+          </div>
+          <div class="flex justify-between items-center text-gray-300">
+            <span><i class="fas fa-check-circle text-emerald-400 mr-2"></i>Unit A12 - Nakuru Gardens (Water + Rent)</span>
+            <span class="font-bold text-emerald-400">+ KES 18,200</span>
+          </div>
+          <div class="flex justify-between items-center text-gray-300">
+            <span><i class="fas fa-clock text-amber-400 mr-2"></i>Automated SMS Reminder Dispatched (142 Tenants)</span>
+            <span class="text-amber-400 font-semibold">Delivered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits of Using Nyumbani -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="bg-navy text-white p-8 rounded-2xl shadow-xl">
+        <h2 class="text-2xl font-bold text-gold mb-6">Benefits of Using Nyumbani</h2>
+        <ul class="space-y-4 text-sm text-gray-200">
+          <li class="flex items-start gap-3">
+            <i class="fas fa-check-square text-gold mt-1"></i>
+            <span><strong>Automated Paperless Invoicing & Receipting:</strong> Instant SMS and email receipts upon payment confirmation.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fas fa-check-square text-gold mt-1"></i>
+            <span><strong>Debt Management:</strong> Automated payment reminders, customizable late penalties, and real-time arrears reporting.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fas fa-check-square text-gold mt-1"></i>
+            <span><strong>Real-Time Reconciliation:</strong> Eliminate manual spreadsheets and prevent revenue leakage.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fas fa-check-square text-gold mt-1"></i>
+            <span><strong>Multi-Channel Payments:</strong> Accept payments seamlessly via M-Pesa Paybill/Till, PesaLink, Bank, or Cash.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fas fa-check-square text-gold mt-1"></i>
+            <span><strong>Service & Utility Charges:</strong> Automated sub-metering calculations for water, electricity, garbage, and security.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kenya Property Search & Filter Module -->
+      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm">
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Smart Kenyan Property & Unit Locator</h3>
+        <p class="text-sm text-gray-600 mb-6">Filter properties and vacant units across Kenyan counties, towns, and unit configurations.</p>
+        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1">County</label>
+            <select id="countyFilter" class="w-full border border-gray-300 rounded-lg p-2.5 bg-white">
+              <option value="Nairobi">Nairobi County</option>
+              <option value="Nakuru">Nakuru County</option>
+              <option value="Kiambu">Kiambu County</option>
+              <option value="Mombasa">Mombasa County</option>
+              <option value="Kisumu">Kisumu County</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1">Unit Type</label>
+            <select id="unitFilter" class="w-full border border-gray-300 rounded-lg p-2.5 bg-white">
+              <option>Single Room</option>
+              <option>Bedsitter</option>
+              <option>1 Bedroom</option>
+              <option>2 Bedroom</option>
+              <option>3 Bedroom</option>
+              <option>Own Compound</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block font-semibold text-gray-700 mb-1">Essential Amenities</label>
+            <div class="flex flex-wrap gap-4 mt-1 text-gray-700">
+              <label class="flex items-center gap-2"><input type="checkbox" checked class="accent-amber-500"> 24/7 Borehole Water</label>
+              <label class="flex items-center gap-2"><input type="checkbox" checked class="accent-amber-500"> CCTV & Manned Security</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-amber-500"> Token Meter</label>
+            </div>
+          </div>
+          <button onclick="alert('Filtering active Nyumbani listings in selected county...')" class="sm:col-span-2 bg-navy hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition">
+            Search Available Units
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Solutions (Who We Serve) -->
+  <section id="solutions" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-amber-600 mb-3">Our Solutions</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-12">Tailored property management and automated billing workflows for every stakeholder in the real estate ecosystem.</p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-navy text-white p-7 rounded-xl shadow-md flex flex-col items-center">
+          <div class="w-12 h-12 rounded-lg bg-white text-amber-600 flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gold mb-2">Landlords</h3>
+          <p class="text-xs text-gray-300 mb-5">Real-time M-Pesa Paybill rent tracking, automated tenant reminders, and instant digital receipts.</p>
+          <a href="#contact" class="mt-auto bg-gold text-slate-950 text-xs font-bold px-4 py-2 rounded">Learn More</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-navy text-white p-7 rounded-xl shadow-md flex flex-col items-center">
+          <div class="w-12 h-12 rounded-lg bg-white text-amber-600 flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gold mb-2">Property Managers</h3>
+          <p class="text-xs text-gray-300 mb-5">Manage multiple house blocks across diverse landlords with automated commission and expense tracking.</p>
+          <a href="#contact" class="mt-auto bg-gold text-slate-950 text-xs font-bold px-4 py-2 rounded">Learn More</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-navy text-white p-7 rounded-xl shadow-md flex flex-col items-center">
+          <div class="w-12 h-12 rounded-lg bg-white text-amber-600 flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-faucet-drip"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gold mb-2">Water Suppliers & Utilities</h3>
+          <p class="text-xs text-gray-300 mb-5">Automated meter reading billing, real-time consumption dashboards, and instant M-Pesa collections.</p>
+          <a href="#contact" class="mt-auto bg-gold text-slate-950 text-xs font-bold px-4 py-2 rounded">Learn More</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-navy text-white p-7 rounded-xl shadow-md flex flex-col items-center">
+          <div class="w-12 h-12 rounded-lg bg-white text-amber-600 flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gold mb-2">Gated Community Managers</h3>
+          <p class="text-xs text-gray-300 mb-5">Service charge invoicing, visitor access logs, welfare contributions, and resident announcements.</p>
+          <a href="#contact" class="mt-auto bg-gold text-slate-950 text-xs font-bold px-4 py-2 rounded">Learn More</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-navy text-white p-7 rounded-xl shadow-md flex flex-col items-center">
+          <div class="w-12 h-12 rounded-lg bg-white text-amber-600 flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-bed"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gold mb-2">Hostel Managers</h3>
+          <p class="text-xs text-gray-300 mb-5">Semester/monthly bed-space allocation, student billing portals, and automated clearance reports.</p>
+          <a href="#contact" class="mt-auto bg-gold text-slate-950 text-xs font-bold px-4 py-2 rounded">Learn More</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-navy text-white p-7 rounded-xl shadow-md flex flex-col items-center">
+          <div class="w-12 h-12 rounded-lg bg-white text-amber-600 flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-key"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gold mb-2">Airbnb & Short-Stay</h3>
+          <p class="text-xs text-gray-300 mb-5">Check-in/out calendars, automated cleaning schedules, and instant guest payment reconciliation.</p>
+          <a href="#contact" class="mt-auto bg-gold text-slate-950 text-xs font-bold px-4 py-2 rounded">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diaspora Banner -->
+  <section id="diaspora" class="bg-navy text-white py-14 border-y border-gray-800">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-extrabold text-gold mb-3">Nyumbani Diaspora</h2>
+      <p class="text-sm uppercase tracking-widest text-gray-300 mb-4">Your Reliable Property Management Solution, Anywhere, Anytime</p>
+      <p class="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto mb-6">
+        With a rapidly growing clientele of over 60,000 tenants and landlords, we understand the unique challenges faced by property owners managing investments from abroad. Gain 100% transparent financial oversight, real-time M-Pesa collection alerts, and instant downloadable statements from anywhere in the world.
+      </p>
+      <a href="#contact" class="inline-block bg-gold text-slate-950 font-bold text-sm px-6 py-3 rounded shadow">
+        Explore Diaspora Portal
+      </a>
+    </div>
+  </section>
+
+  <!-- Key Features Grid -->
+  <section id="features" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-amber-600">Key Features</h2>
+        <p class="text-gray-600 text-sm mt-2">Comprehensive tools engineered for seamless Kenyan property operations</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition">
+          <i class="fas fa-file-invoice-dollar text-2xl text-amber-600 mb-3"></i>
+          <h4 class="font-bold text-slate-900 mb-1">Invoice & Receipt Management</h4>
+          <p class="text-xs text-gray-600">Automatically invoice and receipt all your tenants via SMS or email with zero manual effort.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition">
+          <i class="fas fa-bell text-2xl text-amber-600 mb-3"></i>
+          <h4 class="font-bold text-slate-900 mb-1">Automated Debt Management</h4>
+          <p class="text-xs text-gray-600">Automatically send out rent reminders and penalty alerts to all tenants with arrears.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition">
+          <i class="fas fa-users text-2xl text-amber-600 mb-3"></i>
+          <h4 class="font-bold text-slate-900 mb-1">Tenant & Lease Management</h4>
+          <p class="text-xs text-gray-600">Track tenant profiles, security deposits, leases, repairs, and move-out notices in one place.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition">
+          <i class="fas fa-droplet text-2xl text-amber-600 mb-3"></i>
+          <h4 class="font-bold text-slate-900 mb-1">Service & Utility Charge Billing</h4>
+          <p class="text-xs text-gray-600">Manage metered water, electricity, security, and garbage levies alongside monthly rent.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition">
+          <i class="fas fa-calculator text-2xl text-amber-600 mb-3"></i>
+          <h4 class="font-bold text-slate-900 mb-1">eTIMS & Accounting Ready</h4>
+          <p class="text-xs text-gray-600">Seamless financial exports compatible with QuickBooks and KRA eTIMS tax compliance workflows.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition">
+          <i class="fas fa-wallet text-2xl text-amber-600 mb-3"></i>
+          <h4 class="font-bold text-slate-900 mb-1">Expense & Maintenance Tracking</h4>
+          <p class="text-xs text-gray-600">Record property repairs, caretaker salaries, and vendor payouts with full audit trails.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Reports from the System -->
+  <section id="reports" class="py-16 bg-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-gold">Sample Reports from the System</h2>
+        <p class="text-gray-300 text-sm mt-2">Exportable PDF & CSV financial statements generated in one click</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white text-slate-900 rounded-xl overflow-hidden shadow-lg">
+          <div class="bg-amber-500 text-white font-bold px-5 py-3 text-sm">Organization Overview Report</div>
+          <div class="p-6 text-xs text-gray-600 space-y-2">
+            <p>Comprehensive executive summary detailing active tenants, invoice totals, fully paid units, partially paid balances, and total service charges collected.</p>
+            <div class="bg-gray-100 p-3 rounded font-mono text-[11px] text-slate-800">
+              Total Units: 120 | Occupied: 116 | Collection Efficiency: 98.2%
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white text-slate-900 rounded-xl overflow-hidden shadow-lg">
+          <div class="bg-amber-500 text-white font-bold px-5 py-3 text-sm">Monthly Collections Report</div>
+          <div class="p-6 text-xs text-gray-600 space-y-2">
+            <p>Displays expected monthly rent vs. actual amount received via M-Pesa/Bank and any deficit grouped by month for the entire financial year.</p>
+            <div class="bg-gray-100 p-3 rounded font-mono text-[11px] text-slate-800">
+              Expected: KES 2,400,000 | Received: KES 2,356,800 | Variance: -1.8%
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white text-slate-900 rounded-xl overflow-hidden shadow-lg">
+          <div class="bg-amber-500 text-white font-bold px-5 py-3 text-sm">Deposit Refund Report</div>
+          <div class="p-6 text-xs text-gray-600 space-y-2">
+            <p>Details original security deposit collected, itemized repair deductions, arrears cleared upon vacating, and net refundable balance.</p>
+            <div class="bg-gray-100 p-3 rounded font-mono text-[11px] text-slate-800">
+              Deposit Held: KES 25,000 | Repairs: KES 2,500 | Refundable: KES 22,500
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white text-slate-900 rounded-xl overflow-hidden shadow-lg">
+          <div class="bg-amber-500 text-white font-bold px-5 py-3 text-sm">All-Residents Arrears Report</div>
+          <div class="p-6 text-xs text-gray-600 space-y-2">
+            <p>Lists all houses/rooms, occupancy status, expected monthly rent, paid amounts, unpaid balances, and utility arrears (water & garbage).</p>
+            <div class="bg-gray-100 p-3 rounded font-mono text-[11px] text-slate-800">
+              Aging Breakdown: 0-30 Days | 31-60 Days | 60+ Days Overdue
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Protection & Trusted Partners -->
+  <section id="security" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-600">Enterprise Grade Security</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 mt-1 mb-4">Data Protection & Compliance</h2>
+      <p class="text-gray-600 text-sm max-w-2xl mx-auto mb-10">
+        Compliant with the Kenya Data Protection Act. Encrypted transactions, automated cloud backups, and strict role-based access control safeguard your financial and tenant records.
+      </p>
+
+      <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-6">Trusted By Leading Organizations & Partners</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 items-center text-xs font-bold text-gray-600">
+        <div class="p-4 border rounded-lg bg-gray-50">Safaricom M-Pesa</div>
+        <div class="p-4 border rounded-lg bg-gray-50">Equity Bank</div>
+        <div class="p-4 border rounded-lg bg-gray-50">Amprest Technologies</div>
+        <div class="p-4 border rounded-lg bg-gray-50">GoldPark Homes</div>
+        <div class="p-4 border rounded-lg bg-gray-50">Runda Gardens Assoc.</div>
+        <div class="p-4 border rounded-lg bg-gray-50">Muthaiga North Assoc.</div>
+      </div>
